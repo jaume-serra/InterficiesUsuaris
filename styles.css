@@ -1,0 +1,146 @@
+#logo {
+  float: left;
+}
+
+header > a > img {
+  float: right;
+}
+
+header > h1 {
+  text-align: center;
+  color: rgb(201, 183, 166);
+}
+
+.w3-lobster {
+  font-family: "Lobster", serif;
+}
+
+header {
+  background-image: url(img1.jpg);
+  background-repeat: repeat;
+  border-bottom: 2px solid #a64924;
+}
+
+body {
+  background-image: url(img2.jpg);
+  background-repeat: repeat;
+}
+
+nav {
+  border-bottom: 2px solid #a64924;
+}
+
+nav > a:hover {
+  background-image: url(img1.jpg);
+  background-repeat: repeat;
+  color: rgb(201, 183, 166);
+}
+
+nav > a {
+  text-decoration-line: none;
+}
+
+div > article {
+  padding-bottom: 16px !important;
+}
+footer > p {
+  text-align: center;
+}
+
+.all {
+  display: table;
+  margin: 0 auto;
+}
+.n_plat {
+  border: 2px solid #a64924;
+  padding: 0px !important;
+  width: 440px;
+}
+
+:hover.changebg {
+  background: #dec0b4;
+}
+:hover.hover {
+  cursor: pointer;
+  opacity: 50%;
+}
+
+/* Zoom images */
+.zoom {
+  transition: transform 0.5s; /* Animation */
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(
+    1.05
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+div > h2 {
+  color: rgb(119, 55, 37);
+  font-family: "Bree", "Palatino", "serif";
+}
+
+.break {
+  background: url(img4.jpg) left top repeat-x;
+  padding-top: 33px;
+}
+
+.menu-item {
+  background-color: #dfd4ca;
+  font-family: "Bree", "Palatino", "serif";
+  font-size: 1.2rem;
+}
+
+.menu-item:not(:last-child) {
+  border-bottom: 2px dotted #a64924;
+}
+
+.card-title {
+  text-align: center;
+  color: #a64924;
+  border-bottom: 2px solid #a64924;
+  background-color: #dfd4ca;
+  font-size: 2rem;
+  margin: 0px;
+}
+
+.dish-name {
+  color: #31170f;
+  float: left;
+}
+
+.dish-price {
+  color: #31170f;
+  float: right;
+}
+
+.dish-desc {
+  clear: left;
+  float: left;
+  color: #a64924;
+}
+
+.dish-img {
+  clear: right;
+  float: right;
+}
+
+.dish-button {
+  clear: both;
+  float: left;
+  border-radius: 50%;
+  border: none;
+}
+
+.dish-button:hover {
+  background-color: #a64924;
+  color: white;
+}
+
+footer {
+  background-image: url(img1.jpg);
+  background-repeat: repeat;
+  color: rgb(201, 183, 166);
+}
