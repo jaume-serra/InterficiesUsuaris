@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="scripts.js" defer async></script>
 </head>
@@ -18,13 +19,12 @@
 <body>
     <header class="w3-container">
         <a href="#"><img src="logo.png" alt="Home" width="100px" class="w3-image" id="logo"></a>
-        <a href="#"><img src="burger-header.png" alt="" width="70px" class="w3-image"></a>
         <h1 class="w3-text w3-lobster">La nostra carta</h1>
     </header>
     <nav class="w3-bar">
         <a href="#entrants" , class="w3-bar-item">Entrants</a>
-        <a href="#primers-plats" , class="w3-bar-item">Primers plats</a>
-        <a href="#segons-plats" , class="w3-bar-item">Segons plats</a>
+        <a href="#primers" , class="w3-bar-item">Primers plats</a>
+        <a href="#segons" , class="w3-bar-item">Segons plats</a>
         <a href="#postres" , class="w3-bar-item">Postres</a>
     </nav>
 
@@ -42,127 +42,167 @@
                 </h2>
             </div>
 
-            <div id="carta-entrants">
+            <div id="carta-entrants" style="display: none;"">
                 <article class="w3-container menu-item changebg">
-                    <h3 class="dish-name">Plat 1</h3>
+                    <h3 class="dish-name">Entrant 1</h3>
                     <p class="dish-price">10</p>
                     <p class="dish-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia assumenda non dignissimos tempore alias illo odio architecto cumque nisi quaerat.</p>
-                    <img src="hamburguesa.jpg" alt="Plat 1" width=100px class="dish-img">
-                    <button class=" w3-xlarge w3-circle dish-button">+</button>
+                    <img src="hamburguesa.jpg" alt="Entrant 1" width=100px class="dish-img">
+                    <button class=" w3-xlarge w3-circle dish-button" onclick="add_product('Entrant1', '10')">+</button>
 
                 </article>
 
                 <article class="w3-container menu-item changebg">
-                    <h3 class="dish-name">Plat 1</h3>
-                    <p class="dish-price">10</p>
+                    <h3 class="dish-name">Entrant 2</h3>
+                    <p class="dish-price">12</p>
                     <p class="dish-desc">Descripcio</p>
-                    <img src="hamburguesa.jpg" alt="Plat 1" width=100px class="dish-img">
-                    <button class=" w3-xlarge w3-circle dish-button">+</button>
+                    <img src="hamburguesa.jpg" alt="Entrant 2" width=100px class="dish-img">
+                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Entrant2', '12')">+</button>
 
                 </article>
                 <article class="w3-container menu-item changebg">
-                    <h3 class="dish-name">Plat 1</h3>
-                    <p class="dish-price">10</p>
+                    <h3 class="dish-name">Entrant 3</h3>
+                    <p class="dish-price">13</p>
                     <p class="dish-desc">Descripcio</p>
-                    <img src="hamburguesa.jpg" alt="Plat 1" width=100px class="dish-img">
-                    <button class=" w3-xlarge w3-circle dish-button">+</button>
+                    <img src="hamburguesa.jpg" alt="Entrant 3" width=100px class="dish-img">
+                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Entrant3', '13')">+</button>
 
                 </article>
             </div>
         </div>
 
-        <a name="entrants"></a>
+        <a name="primers"></a>
         <div class=" w3-margin n_plat zoom">
-            <div class="hover" onclick="toggle('carta-entrants')">
+            <div class="hover" onclick="toggle('carta-primers')">
                 <h2 class="w3-lobster card-title w3-display-container">
-                    Entrants
+                    Primers plats
                     <img class="w3-display-right w3-padding"
                         src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-arrow-arrows-those-icons-lineal-color-those-icons-1.png" />
 
                 </h2>
             </div>
 
-            <div id="carta-entrants">
-                <article class="w3-container menu-item">
-                    <h3 class="dish-name">Plat 1</h3>
+            <div id="carta-primers" style="display: none;"">
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Primer 1</h3>
                     <p class="dish-price">10</p>
-                    <p class="dish-desc">Descripcio</p>
-                    <img src="hamburguesa.jpg" alt="Plat 1" width=100px class="dish-img">
+                    <p class="dish-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia assumenda non dignissimos tempore alias illo odio architecto cumque nisi quaerat.</p>
+                    <img src="hamburguesa.jpg" alt="Primer 1" width=100px class="dish-img">
+                    <button class=" w3-xlarge w3-circle dish-button" onclick="add_product('Primer1', '10')">+</button>
+
                 </article>
-                <article class="w3-container menu-item">
-                    <h3 class="dish-name">Plat 2</h3>
-                    <p class="dish-price">10</p>
+
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Primer 2</h3>
+                    <p class="dish-price">12</p>
                     <p class="dish-desc">Descripcio</p>
-                    <img src="hamburguesa.jpg" alt="Plat 1" width=100px class="dish-img">
+                    <img src="hamburguesa.jpg" alt="Primer 2" width=100px class="dish-img">
+                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Primer2', '12')">+</button>
+
                 </article>
-                <article class="w3-container menu-item">
-                    <h3 class="dish-name">Plat 3</h3>
-                    <p class="dish-price">10</p>
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Primer 3</h3>
+                    <p class="dish-price">13</p>
                     <p class="dish-desc">Descripcio</p>
-                    <img src="hamburguesa.jpg" alt="Plat 1" width=100px class="dish-img">
+                    <img src="hamburguesa.jpg" alt="Primer 3" width=100px class="dish-img">
+                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Primer3', '13')">+</button>
+
                 </article>
             </div>
         </div>
 
-
-        <a name="entrants"></a>
+        <a name="segons"></a>
         <div class=" w3-margin n_plat zoom">
-            <div class="hover" onclick="toggle('carta-entrants')">
+            <div class="hover" onclick="toggle('carta-segons')">
                 <h2 class="w3-lobster card-title w3-display-container">
-                    Entrants
+                    Segons plats
                     <img class="w3-display-right w3-padding"
                         src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-arrow-arrows-those-icons-lineal-color-those-icons-1.png" />
 
                 </h2>
             </div>
 
-            <div id="carta-entrants">
-                <article class="w3-container menu-item">
-                    <h3 class="dish-name">Plat 1</h3>
+            <div id="carta-segons" style="display: none;"">
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Segon 1</h3>
                     <p class="dish-price">10</p>
-                    <p class="dish-desc">Descripcio</p>
-                    <img src="hamburguesa.jpg" alt="Plat 1" width=100px class="dish-img">
+                    <p class="dish-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia assumenda non dignissimos tempore alias illo odio architecto cumque nisi quaerat.</p>
+                    <img src="hamburguesa.jpg" alt="Segon 1" width=100px class="dish-img">
+                    <button class=" w3-xlarge w3-circle dish-button" onclick="add_product('Segon1', '10')">+</button>
+
                 </article>
-                <article class="w3-container menu-item">
-                    <h3 class="dish-name">Plat 2</h3>
-                    <p class="dish-price">10</p>
+
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Segon 2</h3>
+                    <p class="dish-price">12</p>
                     <p class="dish-desc">Descripcio</p>
-                    <img src="hamburguesa.jpg" alt="Plat 1" width=100px class="dish-img">
+                    <img src="hamburguesa.jpg" alt="Segon 2" width=100px class="dish-img">
+                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Segon2', '12')">+</button>
+
                 </article>
-                <article class="w3-container menu-item">
-                    <h3 class="dish-name">Plat 3</h3>
-                    <p class="dish-price">10</p>
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Segon 3</h3>
+                    <p class="dish-price">13</p>
                     <p class="dish-desc">Descripcio</p>
-                    <img src="hamburguesa.jpg" alt="Plat 1" width=100px class="dish-img">
+                    <img src="hamburguesa.jpg" alt="Segon 3" width=100px class="dish-img">
+                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Segon3', '13')">+</button>
+
                 </article>
             </div>
         </div>
 
         <a name="postres"></a>
-        <div class="w3-container w3-margin n_plat">
-            <h2 class="w3-container card-title w3-lobster" onclick="toggle('postres')">Postres</h2>
-            <div id="postres">
-                <article class="w3-container menu-item">
-                    <h3 class="dish-name">Plat 1</h3>
+        <div class=" w3-margin n_plat zoom">
+            <div class="hover" onclick="toggle('carta-postres')">
+                <h2 class="w3-lobster card-title w3-display-container">
+                    Postres
+                    <img class="w3-display-right w3-padding"
+                        src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-arrow-arrows-those-icons-lineal-color-those-icons-1.png" />
+
+                </h2>
+            </div>
+
+            <div id="carta-postres" style="display: none;"">
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Postres 1</h3>
                     <p class="dish-price">10</p>
-                    <p class="dish-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, tempore?
-                    </p>
-                    <img src="hamburguesa.jpg" alt="Plat 1" width=100px class="dish-img">
+                    <p class="dish-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia assumenda non dignissimos tempore alias illo odio architecto cumque nisi quaerat.</p>
+                    <img src="hamburguesa.jpg" alt="Postres 1" width=100px class="dish-img">
+                    <button class=" w3-xlarge w3-circle dish-button" onclick="add_product('Postres1', '10')">+</button>
+
                 </article>
-                <article class="w3-container menu-item">
-                    <h3 class="dish-name">Plat 2</h3>
-                    <p class="dish-price">10</p>
-                    <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, nisi!</p>
-                    <img src="hamburguesa.jpg" alt="Plat 1" width=100px class="dish-img">
-                </article>
-                <article class="w3-container menu-item">
-                    <h3 class="dish-name">Plat 3</h3>
-                    <p class="dish-price">10</p>
+
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Postres 2</h3>
+                    <p class="dish-price">12</p>
                     <p class="dish-desc">Descripcio</p>
-                    <img src="hamburguesa.jpg" alt="Plat 1" width=100px class="dish-img">
+                    <img src="hamburguesa.jpg" alt="Postres 2" width=100px class="dish-img">
+                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Postres2', '12')">+</button>
+
+                </article>
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Postres 3</h3>
+                    <p class="dish-price">13</p>
+                    <p class="dish-desc">Descripcio</p>
+                    <img src="hamburguesa.jpg" alt="Postres 3" width=100px class="dish-img">
+                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Postres3', '13')">+</button>
+
                 </article>
             </div>
         </div>
+
+        <section class="w3-container basket w3-margin">
+            <header class="w3-display-container w3-padding-16">
+                <h3 class="w3-lobster w3-display-left" style="color: #a64924;font-size: 2rem;">La teva comanda</h3>
+                <h3 id="total-price" class="w3-display-right money">0</h3>
+            </header>
+            <div class="w3-container w3-center" style="padding-left: 0px;padding-right: 0px;">
+                <p><button class="w3-button w3-round-xxlarge pay_button">Pagar</button></p>
+            </div>
+            <div id="basket-products" class="w3-container basket-content">
+            </div>
+        </section>
+
     </div>
 
     <div class="break"></div>

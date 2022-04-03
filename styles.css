@@ -2,11 +2,11 @@
   float: left;
 }
 
-header > a > img {
+body > header > a > img {
   float: right;
 }
 
-header > h1 {
+body > header > h1 {
   text-align: center;
   color: rgb(201, 183, 166);
 }
@@ -15,7 +15,7 @@ header > h1 {
   font-family: "Lobster", serif;
 }
 
-header {
+body > header {
   background-image: url(img1.jpg);
   background-repeat: repeat;
   border-bottom: 2px solid #a64924;
@@ -137,10 +137,58 @@ div > h2 {
 .dish-button:hover {
   background-color: #a64924;
   color: white;
+  cursor: pointer;
 }
 
 footer {
   background-image: url(img1.jpg);
   background-repeat: repeat;
   color: rgb(201, 183, 166);
+}
+
+.pay_button{
+  background-color: #a64924 !important;
+  width: 400px;
+}
+
+.basket{
+  border: 2px solid #a64924;
+  width: 440px;
+  background-color: #dfd4ca;
+}
+
+.btn{
+  background-color: #a64924;
+  width: 25px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.input-group{
+  display:flex;
+  margin-top:10px;
+}
+
+.input-number{
+  width:30px;
+  text-align: center;
+}
+
+.trash{
+  color: red;
+  position:absolute;
+  right: 80px;
+  top:20px;
+  cursor: pointer;
+}
+
+.money::after{
+  content:"€";
+}
+
+#basket-products>section>span{
+  font-family: "Segoe UI",Arial,sans-serif;
+  margin: 10px 0;
+  font-size: 20px;
 }
