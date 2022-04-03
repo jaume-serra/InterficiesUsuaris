@@ -1,21 +1,21 @@
-function toggle(carta){
+function toggle(carta) {
     carta = '#' + carta
-    if (document.querySelector(carta).style.display == "block"){
+    if (document.querySelector(carta).style.display == "block") {
         document.querySelector(carta).style.display = "none";
     }
-    else{
+    else {
         document.querySelector(carta).style.display = "block";
     }
 }
 
 
-function add_product(plate, price){
+function add_product(plate, price) {
     var section_name = plate + "Section";
     var id_n = "n-" + plate;
     var path = document.getElementById("basket-products");
     var id_price = "p-" + plate;
 
-    if (document.getElementById(section_name)){
+    if (document.getElementById(section_name)) {
         up(id_n, '10', id_price);
         return;
     }
@@ -60,27 +60,28 @@ function add_product(plate, price){
     var btn1 = document.createElement("button");
     btn1.appendChild(document.createTextNode('-'));
     btn1.classList.add("btn");
-    btn1.onclick = function() {down(id_n, '1', id_price);};
+    btn1.onclick = function () { down(id_n, '1', id_price); };
     div2.appendChild(btn1);
 
     var btn2 = document.createElement("button");
     btn2.appendChild(document.createTextNode('+'));
     btn2.classList.add("btn");
-    btn2.onclick = function(){up(id_n, '10', id_price);};
+    btn2.onclick = function () { up(id_n, '10', id_price); };
     div3.appendChild(btn2);
 
     var trsh = document.createElement("i");
     trsh.classList.add("fa", "fa-trash", "trash");
-    trsh.onclick = function() {delete_product(section_name);};
+    trsh.onclick = function () { delete_product(section_name); };
     document.getElementById(section_name).appendChild(trsh);
 
     update_total_price();
 }
 
 
-function delete_product(plate){
+function delete_product(plate) {
     const element = document.getElementById(plate);
     element.remove();
+    update_total_price()
 }
 
 function up(id, max, id_price) {
@@ -101,18 +102,19 @@ function down(id, min, id_price) {
         update_local_price(id_price, id);
 }
 
-function update_local_price(id_price, id_n){
+function update_local_price(id_price, id_n) {
     var price = parseFloat(document.getElementById(id_price).getAttribute('data-price'));
     var n = parseInt(document.getElementById(id_n).value);
     document.getElementById(id_price).textContent = (n * price).toFixed(2);
     update_total_price();
 }
 
-function update_total_price(){
+function update_total_price() {
     var sum = 0;
     var c = document.getElementsByClassName("product-price");
-    for (var i = 0; i < c.length; i++){
+    for (var i = 0; i < c.length; i++) {
         sum = sum + parseFloat(c[i].textContent);
     }
     document.getElementById("total-price").textContent = sum.toFixed(2);
 }
+

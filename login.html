@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="eng">
+<style>
+    .w3-lobster {
+        font-family: "Lobster", serif;
+    }
+</style>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Can Tic</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 </head>
+
 <body>
-    <form>
-        <label for="nom">Nom:</label>
-        <input type="text" id="nom" name="nom">
-        <br>
-        <label for="contrasenya">Contrasenya:</label>
-        <input type="password" id="contrasenya" name="contrasenya">
-        <br>
-        <input type="submit" value="Submit">
-    </form>
+    <header class="w3-container">
+        <a href="#"><img src="logo.png" alt="Home" width="100px" class="w3-image" id="logo"></a>
+        <h1 class="w3-text w3-lobster">La nostra carta</h1>
+    </header>
+
+    <section class="all" style="margin-top: 10px;">
+        <form>
+            <label class="w3-padding" for="nom">Nom:</label>
+            <input type="text" id="nom" name="nom">
+            <br>
+            <label class="w3-padding" for="contrasenya">Contrasenya:</label>
+            <input type="password" id="contrasenya" name="contrasenya">
+            <br>
+            <input type="submit" value="Submit" style="margin-top: 10px;">
+        </form>
+    </section>
+
+    <footer class="w3-container">
+        <p>Autors: Jaume, Jordi, Marti</p>
+        <p><a href="cantic@example.com">contacte@cantic.com</a></p>
+    </footer>
 </body>
+
 </html>
