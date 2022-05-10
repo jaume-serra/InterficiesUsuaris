@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from flask import *
-from flask import Blueprint, render_template, request, redirect, Response, session, url_for
+from flask import Blueprint, render_template, request, redirect, Response, session, url_for, jsonify
 from datetime import timedelta
 import datetime
-""" import  plat
-import comanda """
+import  plat
+import comanda
 import functools
 import random
 
@@ -49,14 +49,79 @@ app.config['PERMANENT_SESSION_LIFETIME'] =  timedelta(minutes=10)
 def index():
     return render_template('/index.html')
 
-@app.route("/index")
-def index_bar():
-    return redirect(url_for('index'))
+@app.route("/login")
+def login():
+    return render_template('/login.html')
 
+#############
+# API REST
+#############
 
+"""
+@GET carta
+    retorna tots els plats
+"""
+@app.route("/carta",methods = ["GET"])
+def carta():
+    if(request.method == "GET"):
+        content = plat.get_carta()
+    return jsonify(content)
 
+"""
+@GET /comanda(actualDay = false)
+    return totes les comandes des de sempre
+@GET /comanda(actualDay = true)
+    return totes les comandes d'avui
+@POST /comanda
+    insert comanda
+"""
+""" @app.route("/comanda",methods = ["GET","POST"])
+def comanda(actualDay):
+    if(request.method == "GET"):
+    if(request.method == "POST"):
+    return """
+
+"""
+@GET comanda/:numComanda
+    retorna aquesta comanda
+@POST comanda/:numComanda
+    modifica aquesta comanda
+@DELETE /comanda/:numComanda 
+    elimina comanda
+"""
+""" @app.route("/comanda/<numComanda>",methods = ["GET","POST","DELETE"])
+def changeComanda():
+    if(request.method == "GET"):
+    if(request.method == "DELETE"):
+
+    return render_template('/index.html')
+ """
 
 
 # @app.errorhandler(404)
 # def page_not_found(e):
 #     return render_template("/error_404.html")
+
+
+
+"""
+TODO: 
+-Afegir data i hora comanda
+
+@GET carta
+    retorna tots els plats
+
+@GET /comanda(actualDay = false)
+    return totes les comandes des de sempre
+@GET /comanda(actualDay = true)
+    return totes les comandes d'avui
+@POST /comanda
+    insert comanda
+
+@GET comanda/:numComanda
+    retorna aquesta comanda
+@POST comanda/:numComanda
+    modifica aquesta comanda
+@DELETE /comanda/:numComanda 
+    elimina comanda
+"""

@@ -1,5 +1,4 @@
-import flask as FlaskApp
-from FlaskApp.DATABASE.db import get_db
+from DATABASE.db import get_db
 
 def insert_comanda(numComanda, plat, quantitat, taula):
     db = get_db()

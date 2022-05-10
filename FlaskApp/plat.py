@@ -1,6 +1,5 @@
-import flask as FlaskApp
 
-from FlaskApp.DATABASE.db import get_db
+from DATABASE.db import get_db
 
 def insert_plat(nom, descripcio, preu, imatge, tipus):
     db = get_db()
@@ -41,4 +40,11 @@ def get_plat_by_tipus(tipusPlat):
     cursor = db.cursor()
     statement = "SELECT * FROM Plats WHERE tipus = ?"
     cursor.execute(statement, [tipusPlat])
+    return cursor.fetchall()
+
+def get_carta():
+    db = get_db()
+    cursor = db.cursor()
+    statement = "SELECT * FROM Plats"
+    cursor.execute(statement)
     return cursor.fetchall()

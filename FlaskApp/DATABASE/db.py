@@ -6,6 +6,8 @@ def get_db():
     conn = sqlite3.connect(DATABASE_NAME)
     return conn
 
+def insert_tables():
+    return
 
 def create_tables():
     tables = [
@@ -21,10 +23,11 @@ def create_tables():
     ,
         """
           CREATE TABLE IF NOT EXISTS Comanda(
-            numComanda INTEGER PRIMARY KEY,
-            plat TEXT PRIMARY KEY,
+            numComanda INTEGER,
+            plat TEXT,
             quantitat INTEGER NOT NULL,
-            taula INTEGER
+            taula INTEGER,
+            PRIMARY KEY (numComanda,plat)
             )
             """
 
@@ -36,3 +39,4 @@ def create_tables():
     for table in tables:
         cursor.execute(table)
 
+create_tables()
