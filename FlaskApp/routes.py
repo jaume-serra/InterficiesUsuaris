@@ -47,7 +47,7 @@ app.config['PERMANENT_SESSION_LIFETIME'] =  timedelta(minutes=10)
 
 @app.route("/")
 def index():
-    return render_template('/index.html')
+    return render_template('/carta.html')
 
 @app.route("/login")
 def login():
