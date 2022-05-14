@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="eng">
+<style>
+    .w3-lobster {
+        font-family: "Lobster", serif;
+    }
+</style>
+
+<head>
+    <title>Can Tic</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header class="w3-container">
+        <a href="#"><img src="../static/img/logo.png" alt="Home" width="100px" class="w3-image" id="logo"></a>
+        <h1 class="w3-text w3-lobster">Comandes</h1>
+    </header>
+
+    <section class="w3-container">
+        <h2 class=w3-lobster>Taula de comandes</h2>
+        <table class="w3-table-all w3-card-4">
+            <tr>
+            <th>Num</th>
+            <th>Plat</th>
+            <th>Quantitat</th>
+            <th>Taula</th>
+            <th>Data i hora</th>
+            <th></th>
+            </tr>
+            <tr>
+            <td>1</td>
+            <td>Macarrons</td>
+            <td>2</td>
+            <td>4</td>
+            <td>2022-1-1 14:10:00</td>
+            <td><i class="fa fa-trash" style="color:red;cursor: pointer;"></i></td>
+            </tr>
+            <tr>
+            <td>2</td>
+            <td>Filet</td>
+            <td>3</td>
+            <td>4</td>
+            <td>2022-1-1 14:10:00</td>
+            <td><i class="fa fa-trash" style="color:red;cursor: pointer;"></i></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="w3-container" style="margin-top: 10px;">
+        <h2 class=w3-lobster>Inserir comanda</h2>
+        <form>
+            <label class="w3-padding" for="num">Num:</label>
+            <input type="number" id="num" name="num">
+            <br>
+            <label class="w3-padding" for="plat">Plat:</label>
+            <input type="text" id="plat" name="plat">
+            <br>
+            <label class="w3-padding" for="quantitat">Quantitat:</label>
+            <input type="number" id="quantitat" name="quantitat">
+            <br>
+            <label class="w3-padding" for="taula">Taula:</label>
+            <input type="number" id="taula" name="taula">
+            <br>
+            <label class="w3-padding" for="data_hora">Data i hora:</label>
+            <input type="datetime-local" id="data_hora" name="data_hora">
+            <br>
+            <input type="submit" value="Submit" style="margin-top: 10px;">
+        </form>
+    </section>
+
+    <footer class="w3-container">
+        <p>Autors: Jaume, Jordi, Marti</p>
+        <p><a href="cantic@example.com">contacte@cantic.com</a></p>
+    </footer>
+</body>
+
+</html>

@@ -127,7 +127,7 @@ div > h2 {
   color: #a64924;
 }
 
-.dish-../img/img {
+.dish-img {
   clear: right;
   float: right;
 }
@@ -196,4 +196,10 @@ footer {
   font-family: "Segoe UI",Arial,sans-serif;
   margin: 10px 0;
   font-size: 20px;
+}
+
+form>label{
+  display: inline-block;
+  width: 150px;
+  text-align: right;
 }
