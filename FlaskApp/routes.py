@@ -53,9 +53,14 @@ def index():
 def login():
     return render_template('/login.html')
 
+
+
+
+
 #############
 # API REST
 #############
+
 
 """
 @GET carta
@@ -70,11 +75,24 @@ def carta():
 """
 @GET /comanda(actualDay = false)
     return totes les comandes des de sempre
+"""
+
+
+
+"""
 @GET /comanda(actualDay = true)
     return totes les comandes d'avui
 @POST /comanda
     insert comanda
 """
+
+@app.route("/comandes")
+def comandes():
+    comandes = comanda.get_comanda_all()
+    return render_template('/comandes.html',comandes=comandes)
+
+
+
 """ @app.route("/comanda",methods = ["GET","POST"])
 def comanda(actualDay):
     if(request.method == "GET"):

@@ -24,30 +24,20 @@
     <section class="w3-container">
         <h2 class=w3-lobster>Taula de comandes</h2>
         <table class="w3-table-all w3-card-4">
+            {% if not comandes %}
+            <p>No hi ha cap comanda </p>
+            {% else %}
+            {% for comanda in comandes %}
             <tr>
-            <th>Num</th>
-            <th>Plat</th>
-            <th>Quantitat</th>
-            <th>Taula</th>
-            <th>Data i hora</th>
-            <th></th>
+                <th>{{ comanda[0] }}</th>
+                <th>{{ comanda[1] }}</th>
+                <th>{{ comanda[2] }}</th>
+                <th>{{ comanda[3] }}</th>
+                <th>{{ comanda[4] }}</th>
+                <td><i class="fa fa-trash" style="color:red;cursor: pointer;"></i></td>
             </tr>
-            <tr>
-            <td>1</td>
-            <td>Macarrons</td>
-            <td>2</td>
-            <td>4</td>
-            <td>2022-1-1 14:10:00</td>
-            <td><i class="fa fa-trash" style="color:red;cursor: pointer;"></i></td>
-            </tr>
-            <tr>
-            <td>2</td>
-            <td>Filet</td>
-            <td>3</td>
-            <td>4</td>
-            <td>2022-1-1 14:10:00</td>
-            <td><i class="fa fa-trash" style="color:red;cursor: pointer;"></i></td>
-            </tr>
+            {% endfor %}
+            {% endif %}
         </table>
     </section>
 

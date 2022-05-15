@@ -37,3 +37,20 @@ def get_comanda_by_taula(taula):
     statement = "SELECT * FROM Comanda WHERE taula = ?"
     cursor.execute(statement, [taula])
     return cursor.fetchall()
+
+
+def get_comanda_all():
+    db = get_db()
+    cursor = db.cursor()
+    statement = "SELECT * FROM Comanda"
+    cursor.execute(statement)
+    return cursor.fetchall()
+
+
+
+# def get_comanda_from_date(data):
+#     db = get_db()
+#     cursor = db.cursor()
+#     statement = "SELECT * FROM Comanda WHERE data >= ?"
+#     cursor.execute(statement, [data])
+#     return cursor.fetchall()
