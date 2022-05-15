@@ -4,6 +4,9 @@
 
 from flask import Flask
 app = Flask(__name__)
+from DATABASE.db import set_up
+
+set_up()
 
 from routes import *
 

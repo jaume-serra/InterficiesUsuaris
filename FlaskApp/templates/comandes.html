@@ -17,51 +17,99 @@
 
 <body>
     <header class="w3-container">
-        <a href="#"><img src="../static/img/logo.png" alt="Home" width="100px" class="w3-image" id="logo"></a>
+        <a href=""><img src="../static/img/logo.png" alt="Home" width="100px" class="w3-image" id="logo"></a>
         <h1 class="w3-text w3-lobster">Comandes</h1>
     </header>
 
-    <section class="w3-container">
+    <section class="w3-container w3-margin-bottom">
+        {% if oneComanda %}
+        <h2 class=w3-lobster>Comanda Id: {{ comandes[0][0] }}</h2>
+        {% else %}
         <h2 class=w3-lobster>Taula de comandes</h2>
+        {% endif %}
         <table class="w3-table-all w3-card-4">
             {% if not comandes %}
             <p>No hi ha cap comanda </p>
             {% else %}
+            {% if oneComanda %}
             {% for comanda in comandes %}
+
             <tr>
                 <th>{{ comanda[0] }}</th>
                 <th>{{ comanda[1] }}</th>
                 <th>{{ comanda[2] }}</th>
                 <th>{{ comanda[3] }}</th>
                 <th>{{ comanda[4] }}</th>
-                <td><i class="fa fa-trash" style="color:red;cursor: pointer;"></i></td>
+                <form method="POST">
+                    <td>
+                        <button type="submit">
+                            <i class="fa fa-trash" style="color:red;cursor: pointer;"></i>
+                        </button>
+                    </td>
+                    <input style="display:none;" type="text" name="id" value="{{ comanda[0] }}">
+                    <input style="display:none;" type="text" name="plat" value="{{ comanda[1] }}">
+
+                </form>
             </tr>
             {% endfor %}
+            {% else %}
+            {% for comanda in comandes %}
+            <tr>
+                <th><a href="/comanda/{{comanda[0]}}">{{ comanda[0] }}</a></th>
+                <th>{{ comanda[1] }}</th>
+                <th>{{ comanda[2] }}</th>
+                <th>{{ comanda[3] }}</th>
+                <th>{{ comanda[4] }}</th>
+                <form method="POST">
+                    <td>
+                        <button type="submit">
+                            <i class="fa fa-trash" style="color:red;cursor: pointer;"></i>
+                        </button>
+                    </td>
+                    <input style="display:none;" type="text" name="id" value="{{ comanda[0] }}">
+                </form>
+            </tr>
+            {% endfor %}
+
+            {% endif %}
             {% endif %}
         </table>
+        {% if msg %}
+        {% if valid %}
+        <div class="w3-panel w3-green">
+            <h3>Success!</h3>
+            <p>{{ msg }}</p>
+        </div>
+        {% else %}
+        <div class="w3-panel w3-red">
+            <h3>Error!</h3>
+            <p>{{ msg }}</p>
+        </div>
+        {% endif %}
+        {% endif %}
     </section>
 
-    <section class="w3-container" style="margin-top: 10px;">
+    <!-- <section class="w3-container" style="margin-top: 10px;">
         <h2 class=w3-lobster>Inserir comanda</h2>
-        <form>
+        <form method="post">
             <label class="w3-padding" for="num">Num:</label>
-            <input type="number" id="num" name="num">
+            <input type="number" id="num" name="num" required>
             <br>
             <label class="w3-padding" for="plat">Plat:</label>
-            <input type="text" id="plat" name="plat">
+            <input type="text" id="plat" name="plat" required>
             <br>
             <label class="w3-padding" for="quantitat">Quantitat:</label>
-            <input type="number" id="quantitat" name="quantitat">
+            <input type="number" id="quantitat" name="quantitat" required>
             <br>
             <label class="w3-padding" for="taula">Taula:</label>
-            <input type="number" id="taula" name="taula">
+            <input type="number" id="taula" name="taula" required>
             <br>
             <label class="w3-padding" for="data_hora">Data i hora:</label>
-            <input type="datetime-local" id="data_hora" name="data_hora">
+            <input type="datetime-local" id="data_hora" name="data_hora" required>
             <br>
             <input type="submit" value="Submit" style="margin-top: 10px;">
         </form>
-    </section>
+    </section> -->
 
     <footer class="w3-container">
         <p>Autors: Jaume, Jordi, Marti</p>

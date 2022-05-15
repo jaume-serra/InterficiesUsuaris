@@ -24,11 +24,30 @@ def delete_commanda(numComanda):
     db.commit()
     return True
 
+def delete_commanda_plat(numComanda,plat):
+    try:
+        db = get_db()
+        cursor = db.cursor()
+        statement = "DELETE FROM Comanda WHERE numComanda = ? AND plat = ?"
+        cursor.execute(statement, [numComanda,plat])
+        db.commit()
+        print("nerror")
+        return True
+    except:
+        print("error")
+        return False
 def get_comanda_by_num(numComanda):
     db = get_db()
     cursor = db.cursor()
     statement = "SELECT * FROM Comanda WHERE numComanda = ?"
     cursor.execute(statement, [numComanda])
+    return cursor.fetchall()
+
+def get_comanda_by_num_plat(numComanda,plat):
+    db = get_db()
+    cursor = db.cursor()
+    statement = "SELECT * FROM Comanda WHERE numComanda = ? AND plat = ?"
+    cursor.execute(statement, [numComanda,plat])
     return cursor.fetchone()
 
 def get_comanda_by_taula(taula):

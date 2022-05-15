@@ -69,5 +69,6 @@ def create_tables():
     for table in tables:
         cursor.execute(table)
 
-create_tables()
-insert_tables()
+def set_up():
+    create_tables()
+    insert_tables()

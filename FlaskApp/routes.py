@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from crypt import methods
 from flask import *
 from flask import Blueprint, render_template, request, redirect, Response, session, url_for, jsonify
 from datetime import timedelta
@@ -45,9 +46,14 @@ app.config['PERMANENT_SESSION_LIFETIME'] =  timedelta(minutes=10)
 #         return func()
 #     return secure_function_logged
 
-@app.route("/")
+@app.route("/",methods=["GET","POST"])
 def index():
+    if(request.method == "POST"):
+        print(request.form)
+        return render_template('/carta.html')
     return render_template('/carta.html')
+    
+    
 
 @app.route("/login")
 def login():
@@ -72,24 +78,33 @@ def carta():
         content = plat.get_carta()
     return jsonify(content)
 
-"""
-@GET /comanda(actualDay = false)
-    return totes les comandes des de sempre
-"""
-
 
 
 """
-@GET /comanda(actualDay = true)
-    return totes les comandes d'avui
+@GET /comanda()
+    return totes les comandes
 @POST /comanda
     insert comanda
 """
 
-@app.route("/comandes")
+@app.route("/comandes", methods=["GET", "POST"])
 def comandes():
-    comandes = comanda.get_comanda_all()
-    return render_template('/comandes.html',comandes=comandes)
+    if(request.method =="GET"):
+        comandes = comanda.get_comanda_all()
+        return render_template('/comandes.html',comandes=comandes)
+
+    if(request.method =="POST"):
+        id = request.form.get('id')
+        if(comanda.get_comanda_by_num(id)):
+            comanda.delete_commanda(id)
+            msg="Comanda "+ str(id) + " eliminada correctament"
+            comanda_info = comanda.get_comanda_all()
+            return render_template('/comandes.html',comandes=comanda_info, msg=msg, valid=True) 
+        msg= "Ops! No hi ha comanda amb l'identificador "+ str(id)
+        comanda_info = comanda.get_comanda_all()
+        return render_template('/comandes.html',comandes = comanda_info, msg=msg, valid=False) 
+    return render_template('/comandes.html',comandes=[])
+    
 
 
 
@@ -102,11 +117,30 @@ def comanda(actualDay):
 """
 @GET comanda/:numComanda
     retorna aquesta comanda
-@POST comanda/:numComanda
-    modifica aquesta comanda
+
 @DELETE /comanda/:numComanda 
     elimina comanda
 """
+@app.route("/comanda/<id>", methods=["GET", "POST"])
+def get_comanda(id):
+    if(request.method =="GET"):
+        comanda_info = comanda.get_comanda_by_num(id)
+        return render_template('/comandes.html',comandes=comanda_info, oneComanda=True) 
+    if(request.method =="POST"):
+        id = request.form.get('id')
+        plat_info = request.form.get('plat')
+        print(id,plat_info)
+
+        if(comanda.get_comanda_by_num_plat(id,plat_info)):
+            comanda.delete_commanda_plat(id, plat_info)
+            msg="Comanda "+ id +" plat " + str(plat_info) + " eliminada correctament"
+            comanda_info = comanda.get_comanda_by_num(id)
+            return render_template('/comandes.html',comandes=comanda_info, msg=msg, valid=True) 
+        msg= "Ops! No hi ha comanda amb l'identificador "+ id+ " i el plat "+ str(plat_info)
+        comanda_info = comanda.get_comanda_by_num(id)
+        return render_template('/comandes.html',comandes = comanda_info, msg=msg, valid=False) 
+    return render_template('/comandes.html',comandes=[])
+
 """ @app.route("/comanda/<numComanda>",methods = ["GET","POST","DELETE"])
 def changeComanda():
     if(request.method == "GET"):
@@ -116,9 +150,9 @@ def changeComanda():
  """
 
 
-# @app.errorhandler(404)
-# def page_not_found(e):
-#     return render_template("/error_404.html")
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("/error_404.html")
 
 
 
