@@ -163,7 +163,12 @@
 
             </form>
         </section>
-
+        {% if msg %}
+        <div class="w3-panel w3-green">
+            <h3>Success!</h3>
+            <p>{{ msg }}</p>
+        </div>
+        {% endif %}
     </div>
 
     <div class="break"></div>

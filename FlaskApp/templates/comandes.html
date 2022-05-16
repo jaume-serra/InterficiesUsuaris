@@ -32,8 +32,15 @@
             <p>No hi ha cap comanda </p>
             {% else %}
             {% if oneComanda %}
+            <tr>
+                <th>Num</th>
+                <th>Plat</th>
+                <th>Quantitat</th>
+                <th>Taula</th>
+                <th>Data i hora</th>
+                <th></th>
+            </tr>
             {% for comanda in comandes %}
-
             <tr>
                 <th>{{ comanda[0] }}</th>
                 <th>{{ comanda[1] }}</th>
@@ -53,6 +60,14 @@
             </tr>
             {% endfor %}
             {% else %}
+            <tr>
+                <th>Num</th>
+                <th>Plat</th>
+                <th>Quantitat</th>
+                <th>Taula</th>
+                <th>Data i hora</th>
+                <th></th>
+            </tr>
             {% for comanda in comandes %}
             <tr>
                 <th><a href="/comanda/{{comanda[0]}}">{{ comanda[0] }}</a></th>
@@ -62,7 +77,7 @@
                 <th>{{ comanda[4] }}</th>
                 <form method="POST">
                     <td>
-                        <button >
+                        <button>
                             <i class="fa fa-trash" style="color:red;cursor: pointer;"></i>
                         </button>
                     </td>

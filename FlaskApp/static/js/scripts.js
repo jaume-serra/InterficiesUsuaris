@@ -21,6 +21,8 @@ function add_product(plate, price) {
     }
 
     var new_product = document.createElement("section");
+
+
     new_product.setAttribute("id", section_name);
     new_product.classList.add("w3-display-container", "w3-padding-16", "w3-panel", "w3-border-top", "w3-border-black")
     path.appendChild(new_product);
@@ -50,6 +52,8 @@ function add_product(plate, price) {
 
     var inpt = document.createElement("input");
     inpt.setAttribute("id", id_n);
+    inpt.setAttribute("name", plate);
+
     inpt.value = 1;
     inpt.classList.add("input-number");
     div1.appendChild(inpt);
@@ -61,11 +65,14 @@ function add_product(plate, price) {
     var btn1 = document.createElement("button");
     btn1.appendChild(document.createTextNode('-'));
     btn1.classList.add("btn");
+    btn1.setAttribute("type", "button")
+
     btn1.onclick = function () { down(id_n, '1', id_price); };
     div2.appendChild(btn1);
 
     var btn2 = document.createElement("button");
     btn2.appendChild(document.createTextNode('+'));
+    btn2.setAttribute("type", "button")
     btn2.classList.add("btn");
     btn2.onclick = function () { up(id_n, '10', id_price); };
     div3.appendChild(btn2);

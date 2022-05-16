@@ -1,13 +1,16 @@
+from datetime import datetime
 from DATABASE.db import get_db
 
-def insert_comanda(numComanda, plat, quantitat, taula):
+def insert_comanda(numComanda, plat, quantitat, taula, data = datetime.now().replace(microsecond=0)):
+
     db = get_db()
     cursor = db.cursor()
-    statement = "INSERT INTO Comanda(numComanda, plat, quantitat, taula) VALUES (?, ?, ?, ?))"
-    cursor.execute(statement, [numComanda, plat, quantitat, taula])
+    statement = "INSERT INTO Comanda(numComanda, plat, quantitat, taula, data) VALUES (?, ?, ?, ?, ?)"
+    cursor.execute(statement, [numComanda, plat, quantitat, taula, data])
     db.commit()
     return True
-
+    
+        
 def update_comanda(numActual, numComanda, plat, quantitat, taula):
     db = get_db()
     cursor = db.cursor()
@@ -65,11 +68,16 @@ def get_comanda_all():
     cursor.execute(statement)
     return cursor.fetchall()
 
+def get_last_comanda_num():
+    db = get_db()
+    cursor = db.cursor()
+    statement = "SELECT MAX(numComanda) FROM Comanda"
+    cursor.execute(statement)
+    return cursor.fetchone()
 
-
-# def get_comanda_from_date(data):
-#     db = get_db()
-#     cursor = db.cursor()
-#     statement = "SELECT * FROM Comanda WHERE data >= ?"
-#     cursor.execute(statement, [data])
-#     return cursor.fetchall()
+def get_available_taula():
+    db = get_db()
+    cursor = db.cursor()
+    statement = "SELECT MAX(taula) FROM Comanda"
+    cursor.execute(statement)
+    return cursor.fetchone()
