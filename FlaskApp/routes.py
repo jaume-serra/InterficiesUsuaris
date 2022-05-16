@@ -48,10 +48,18 @@ app.config['PERMANENT_SESSION_LIFETIME'] =  timedelta(minutes=10)
 
 @app.route("/",methods=["GET","POST"])
 def index():
+    entrants = plat.get_plat_by_tipus('Entrant')
+    primers = plat.get_plat_by_tipus('Primer')
+    segons =  plat.get_plat_by_tipus('Segon')
+    postres =  plat.get_plat_by_tipus('Postres')
+    
     if(request.method == "POST"):
-        print(request.form)
-        return render_template('/carta.html')
-    return render_template('/carta.html')
+        print("post")
+        return render_template('/carta.html', entrants = entrants, primers = primers,segons=segons, postres=postres)
+    
+    if(request.method == "GET"):
+        print("get")
+        return render_template('/carta.html', entrants = entrants, primers = primers,segons=segons, postres=postres)
     
     
 

@@ -75,8 +75,6 @@ function add_product(plate, price) {
     trsh.onclick = function () { delete_product(section_name); };
     document.getElementById(section_name).appendChild(trsh);
 
-    console.log('div1 :>> ', div1);
-    // const product = {"id":id_price, "price":price}
     update_total_price();
 }
 

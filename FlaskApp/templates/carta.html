@@ -48,34 +48,20 @@
 
                 </h2>
             </div>
-
             <div id="carta-entrants" style="display: none;"">
+                {% for entrant in entrants %}
                 <article class=" w3-container menu-item changebg">
-                <h3 class="dish-name">Entrant 1</h3>
-                <p class="dish-price">10</p>
-                <p class="dish-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia assumenda non
-                    dignissimos tempore alias illo odio architecto cumque nisi quaerat.</p>
-                <img src="../static/img/hamburguesa.jpg" alt="Entrant 1" width=100px class="dish-img">
-                <button class=" w3-xlarge w3-circle dish-button" onclick="add_product('Entrant1', '10')">+</button>
+                <h3 class="dish-name">{{ entrant[1] }}</h3>
+                <p class="dish-price">{{ entrant[3] }}</p>
+                <p class="dish-desc">{{ entrant[2] }}</p>
+                {% if entrant[4] %}
+                <img src="../static/img/hamburguesa.jpg" alt="{{entrant[1]}}" width=100px class="dish-img">
+                {% endif %}
+                <button class=" w3-xlarge w3-circle dish-button"
+                    onclick="add_product('{{entrant[1]}}', '{{entrant[3]}}')">+</button>
 
                 </article>
-
-                <article class="w3-container menu-item changebg">
-                    <h3 class="dish-name">Entrant 2</h3>
-                    <p class="dish-price">12</p>
-                    <p class="dish-desc">Descripcio</p>
-                    <img src="../static/img/hamburguesa.jpg" alt="Entrant 2" width=100px class="dish-img">
-                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Entrant2', '12')">+</button>
-
-                </article>
-                <article class="w3-container menu-item changebg">
-                    <h3 class="dish-name">Entrant 3</h3>
-                    <p class="dish-price">13</p>
-                    <p class="dish-desc">Descripcio</p>
-                    <img src="../static/img/hamburguesa.jpg" alt="Entrant 3" width=100px class="dish-img">
-                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Entrant3', '13')">+</button>
-
-                </article>
+                {% endfor %}
             </div>
         </div>
 
@@ -91,32 +77,19 @@
             </div>
 
             <div id="carta-primers" style="display: none;"">
+                {% for primer in primers %}
                 <article class=" w3-container menu-item changebg">
-                <h3 class="dish-name">Primer 1</h3>
-                <p class="dish-price">10</p>
-                <p class="dish-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia assumenda non
-                    dignissimos tempore alias illo odio architecto cumque nisi quaerat.</p>
-                <img src="../static/img/hamburguesa.jpg" alt="Primer 1" width=100px class="dish-img">
-                <button class=" w3-xlarge w3-circle dish-button" onclick="add_product('Primer1', '10')">+</button>
+                <h3 class="dish-name">{{ primer[1] }}</h3>
+                <p class="dish-price">{{ primer[3] }}</p>
+                <p class="dish-desc">{{ primer[2] }}</p>
+                {% if primer[4] %}
+                <img src="../static/img/hamburguesa.jpg" alt="{{primer[1]}}" width=100px class="dish-img">
+                {% endif %}
+                <button class=" w3-xlarge w3-circle dish-button"
+                    onclick="add_product('{{primer[1]}}', '{{primer[3]}}')">+</button>
 
                 </article>
-
-                <article class="w3-container menu-item changebg">
-                    <h3 class="dish-name">Primer 2</h3>
-                    <p class="dish-price">12</p>
-                    <p class="dish-desc">Descripcio</p>
-                    <img src="../static/img/hamburguesa.jpg" alt="Primer 2" width=100px class="dish-img">
-                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Primer2', '12')">+</button>
-
-                </article>
-                <article class="w3-container menu-item changebg">
-                    <h3 class="dish-name">Primer 3</h3>
-                    <p class="dish-price">13</p>
-                    <p class="dish-desc">Descripcio</p>
-                    <img src="../static/img/hamburguesa.jpg" alt="Primer 3" width=100px class="dish-img">
-                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Primer3', '13')">+</button>
-
-                </article>
+                {% endfor %}
             </div>
         </div>
 
@@ -132,32 +105,19 @@
             </div>
 
             <div id="carta-segons" style="display: none;"">
+                {% for segon in segons %}
                 <article class=" w3-container menu-item changebg">
-                <h3 class="dish-name">Segon 1</h3>
-                <p class="dish-price">10</p>
-                <p class="dish-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia assumenda non
-                    dignissimos tempore alias illo odio architecto cumque nisi quaerat.</p>
-                <img src="../static/img/hamburguesa.jpg" alt="Segon 1" width=100px class="dish-img">
-                <button class=" w3-xlarge w3-circle dish-button" onclick="add_product('Segon1', '10')">+</button>
+                <h3 class="dish-name">{{ segon[1] }}</h3>
+                <p class="dish-price">{{ segon[3] }}</p>
+                <p class="dish-desc">{{ segon[2] }}</p>
+                {% if segon[4] %}
+                <img src="../static/img/hamburguesa.jpg" alt="{{segon[1]}}" width=100px class="dish-img">
+                {% endif %}
+                <button class=" w3-xlarge w3-circle dish-button"
+                    onclick="add_product('{{segon[1]}}', '{{segon[3]}}')">+</button>
 
                 </article>
-
-                <article class="w3-container menu-item changebg">
-                    <h3 class="dish-name">Segon 2</h3>
-                    <p class="dish-price">12</p>
-                    <p class="dish-desc">Descripcio</p>
-                    <img src="../static/img/hamburguesa.jpg" alt="Segon 2" width=100px class="dish-img">
-                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Segon2', '12')">+</button>
-
-                </article>
-                <article class="w3-container menu-item changebg">
-                    <h3 class="dish-name">Segon 3</h3>
-                    <p class="dish-price">13</p>
-                    <p class="dish-desc">Descripcio</p>
-                    <img src="../static/img/hamburguesa.jpg" alt="Segon 3" width=100px class="dish-img">
-                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Segon3', '13')">+</button>
-
-                </article>
+                {% endfor %}
             </div>
         </div>
 
@@ -173,32 +133,19 @@
             </div>
 
             <div id="carta-postres" style="display: none;"">
+                {% for postre in postres %}
                 <article class=" w3-container menu-item changebg">
-                <h3 class="dish-name">Postres 1</h3>
-                <p class="dish-price">10</p>
-                <p class="dish-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia assumenda non
-                    dignissimos tempore alias illo odio architecto cumque nisi quaerat.</p>
-                <img src="../static/img/hamburguesa.jpg" alt="Postres 1" width=100px class="dish-img">
-                <button class=" w3-xlarge w3-circle dish-button" onclick="add_product('Postres1', '10')">+</button>
+                <h3 class="dish-name">{{ postre[1] }}</h3>
+                <p class="dish-price">{{ postre[3] }}</p>
+                <p class="dish-desc">{{ postre[2] }}</p>
+                {% if postre[4] %}
+                <img src="../static/img/hamburguesa.jpg" alt="{{postre[1]}}" width=100px class="dish-img">
+                {% endif %}
+                <button class=" w3-xlarge w3-circle dish-button"
+                    onclick="add_product('{{postre[1]}}', '{{postre[3]}}')">+</button>
 
                 </article>
-
-                <article class="w3-container menu-item changebg">
-                    <h3 class="dish-name">Postres 2</h3>
-                    <p class="dish-price">12</p>
-                    <p class="dish-desc">Descripcio</p>
-                    <img src="../static/img/hamburguesa.jpg" alt="Postres 2" width=100px class="dish-img">
-                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Postres2', '12')">+</button>
-
-                </article>
-                <article class="w3-container menu-item changebg">
-                    <h3 class="dish-name">Postres 3</h3>
-                    <p class="dish-price">13</p>
-                    <p class="dish-desc">Descripcio</p>
-                    <img src="../static/img/hamburguesa.jpg" alt="Postres 3" width=100px class="dish-img">
-                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Postres3', '13')">+</button>
-
-                </article>
+                {% endfor %}
             </div>
         </div>
 
@@ -209,7 +156,7 @@
             </header>
             <form action="" method="post">
                 <div class="w3-container w3-center" style="margin-top:10px; padding-left: 0px;padding-right: 0px;">
-                    <p><button class="w3-button w3-round-xxlarge pay_button">Pagar</button></p>
+                    <p><button type="submit" class="w3-button w3-round-xxlarge pay_button">Pagar</button></p>
                 </div>
                 <div id="basket-products" class="w3-container basket-content">
                 </div>
