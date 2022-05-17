@@ -9,7 +9,6 @@ def insert_plat(nom, descripcio, preu, imatge, tipus):
     db.commit()
     return True
 
-# Key = nom o id??
 def update_plat(nomActual, nom, descripcio, preu, imatge, tipus):
     db = get_db()
     cursor = db.cursor()
@@ -18,7 +17,6 @@ def update_plat(nomActual, nom, descripcio, preu, imatge, tipus):
     db.commit()
     return True
 
-# Key = nom o id??
 def delete_plat(nomPlat):
     db = get_db()
     cursor = db.cursor()
@@ -27,7 +25,6 @@ def delete_plat(nomPlat):
     db.commit()
     return True
 
-# Key = nom o id??
 def get_plat_by_nom(nomPlat):
     db = get_db()
     cursor = db.cursor()

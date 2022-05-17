@@ -5,10 +5,6 @@ from datetime import timedelta
 import  plat
 import comanda
 
-
-
-
-
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 app.config['PERMANENT_SESSION_LIFETIME'] =  timedelta(minutes=10)
@@ -25,13 +21,13 @@ def index():
         #Actualitzem numComanda i taula
         numComanda = comanda.get_last_comanda_num()[0] + 1
         taula = comanda.get_available_taula()[0] + 1 
+        #Insertem cada comanda a la bbdd
         for name, quantitat in request.form.items():
             comanda.insert_comanda(numComanda, name, int(quantitat), taula)
         msg = "Comanda afegida correctament!"
         return render_template('/carta.html', entrants = entrants, primers = primers,segons=segons, postres=postres, msg=msg)
     
     if(request.method == "GET"):
-        print("get")
         return render_template('/carta.html', entrants = entrants, primers = primers,segons=segons, postres=postres)
     
     
@@ -80,7 +76,8 @@ def comandes():
             comanda.delete_commanda(id)
             msg="Comanda "+ str(id) + " eliminada correctament"
             comanda_info = comanda.get_comanda_all()
-            return render_template('/comandes.html',comandes=comanda_info, msg=msg, valid=True) 
+            return render_template('/comandes.html',comandes=comanda_info, msg=msg, valid=True)
+
         msg= "Ops! No hi ha comanda amb l'identificador "+ str(id)
         comanda_info = comanda.get_comanda_all()
         return render_template('/comandes.html',comandes = comanda_info, msg=msg, valid=False) 
@@ -104,13 +101,13 @@ def get_comanda(id):
     if(request.method =="POST"):
         id = request.form.get('id')
         plat_info = request.form.get('plat')
-        print(id,plat_info)
 
         if(comanda.get_comanda_by_num_plat(id,plat_info)):
             comanda.delete_commanda_plat(id, plat_info)
             msg="Comanda "+ id +" plat " + str(plat_info) + " eliminada correctament"
             comanda_info = comanda.get_comanda_by_num(id)
-            return render_template('/comandes.html',comandes=comanda_info, msg=msg, valid=True) 
+            return render_template('/comandes.html',comandes=comanda_info, msg=msg, valid=True)
+            
         msg= "Ops! No hi ha comanda amb l'identificador "+ id+ " i el plat "+ str(plat_info)
         comanda_info = comanda.get_comanda_by_num(id)
         return render_template('/comandes.html',comandes = comanda_info, msg=msg, valid=False) 
