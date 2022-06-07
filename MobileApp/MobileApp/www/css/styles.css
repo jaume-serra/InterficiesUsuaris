@@ -1,0 +1,212 @@
+#logo {
+    float: left;
+  }
+  
+  body {
+    min-width: 300px;
+  }
+  body > header > a > img {
+    float: right;
+  }
+  
+  body > header > h1 {
+    text-align: center;
+    color: rgb(201, 183, 166);
+  }
+  
+  .w3-lobster {
+    font-family: "Lobster", serif;
+  }
+  
+  body > header {
+    background-image: url(img1.jpg);
+    background-repeat: repeat;
+    border-bottom: 2px solid #a64924;
+  }
+  
+  body {
+    background-image: url(img2.jpg);
+    background-repeat: repeat;
+  }
+  
+  nav {
+    border-bottom: 2px solid #a64924;
+  }
+  
+  nav > a:hover {
+    background-image: url(img1.jpg);
+    background-repeat: repeat;
+    color: rgb(201, 183, 166);
+  }
+  
+  nav > a {
+    text-decoration-line: none;
+  }
+  
+  div > article {
+    padding-bottom: 16px !important;
+  }
+  footer > p {
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    .n_plat{
+      width: 300px !important;
+    }
+    .basket{
+      width: 300px !important;
+
+    }
+    .pay_button{
+      width: 260px !important;
+    }
+
+
+   
+  }
+  .all {
+    display: table;
+    margin: 0 auto;
+  }
+  .n_plat {
+    border: 2px solid #a64924;
+    padding: 0px !important;
+    width: 440px;
+  }
+  
+  :hover.changebg {
+    background: #dec0b4;
+  }
+  :hover.hover {
+    cursor: pointer;
+    opacity: 50%;
+  }
+  
+  /* Zoom images */
+  .zoom {
+    transition: transform 0.5s; /* Animation */
+    margin: 0 auto;
+  }
+  
+  .zoom:hover {
+    transform: scale(
+      1.05
+    ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+  
+  div > h2 {
+    color: rgb(119, 55, 37);
+    font-family: "Bree", "Palatino", "serif";
+  }
+  
+  .break {
+    background: url(img4.jpg) left top repeat-x;
+    padding-top: 33px;
+  }
+  
+  .menu-item {
+    background-color: #dfd4ca;
+    font-family: "Bree", "Palatino", "serif";
+    font-size: 1.2rem;
+  }
+  
+  .menu-item:not(:last-child) {
+    border-bottom: 2px dotted #a64924;
+  }
+  
+  .card-title {
+    text-align: center;
+    color: #a64924;
+    border-bottom: 2px solid #a64924;
+    background-color: #dfd4ca;
+    font-size: 2rem;
+    margin: 0px;
+  }
+  
+  .dish-name {
+    color: #31170f;
+    float: left;
+  }
+  
+  .dish-price {
+    color: #31170f;
+    float: right;
+  }
+  
+  .dish-desc {
+    clear: left;
+    float: left;
+    color: #a64924;
+  }
+  
+  .dish-img {
+    clear: right;
+    float: right;
+  }
+  
+  .dish-button {
+    clear: both;
+    float: left;
+    border-radius: 50%;
+    border: none;
+  }
+  
+  .dish-button:hover {
+    background-color: #a64924;
+    color: white;
+    cursor: pointer;
+  }
+  
+  footer {
+    background-image: url(img1.jpg);
+    background-repeat: repeat;
+    color: rgb(201, 183, 166);
+  }
+  
+  .pay_button{
+    background-color: #a64924 !important;
+    width: 400px;
+  }
+  
+  .basket{
+    border: 2px solid #a64924;
+    width: 440px;
+    background-color: #dfd4ca;
+  }
+  
+  .btn{
+    background-color: #a64924;
+    width: 25px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .input-group{
+    display:flex;
+    margin-top:10px;
+  }
+  
+  .input-number{
+    width:30px;
+    text-align: center;
+  }
+  
+  .trash{
+    color: red;
+    position:absolute;
+    right: 80px;
+    top:20px;
+    cursor: pointer;
+  }
+  
+  .money::after{
+    content:"€";
+  }
+  
+  #basket-products>section>span{
+    font-family: "Segoe UI",Arial,sans-serif;
+    margin: 10px 0;
+    font-size: 20px;
+  }

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <!-- <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <title>Can Tic</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <script src="js/scripts.js"></script>
+</head>
+
+<body>
+    <header class="w3-container">
+        <a href="#"><img src="img/logo.png" alt="Home" width="100px" class="w3-image" id="logo"></a>
+        <h1 class="w3-text w3-lobster">La nostra carta</h1>
+    </header>
+    <nav class="w3-bar">
+        <a href="#entrants" , class="w3-bar-item">Entrants</a>
+        <a href="#primers" , class="w3-bar-item">Primers plats</a>
+        <a href="#segons" , class="w3-bar-item">Segons plats</a>
+        <a href="#postres" , class="w3-bar-item">Postres</a>
+    </nav>
+
+    <div class="break"></div>
+
+    <div class="all">
+        <a name="entrants"></a>
+        <div class=" w3-margin n_plat zoom">
+            <div class="hover" onclick="toggle('carta-entrants')">
+                <h2 class="w3-lobster card-title w3-display-container">
+                    Entrants
+                    <img class="w3-display-right w3-padding"
+                        src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-arrow-arrows-those-icons-lineal-color-those-icons-1.png" />
+
+                </h2>
+            </div>
+
+            <div id="carta-entrants" style="display: none;"">
+                    <article class=" w3-container menu-item changebg">
+                <h3 class="dish-name">Entrant 1</h3>
+                <p class="dish-price">10</p>
+                <p class="dish-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia assumenda non
+                    dignissimos tempore alias illo odio architecto cumque nisi quaerat.</p>
+                <img src="img/hamburguesa.jpg" alt="Entrant 1" width=100px class="dish-img">
+                <button class=" w3-xlarge w3-circle dish-button" onclick="add_product('Entrant1', '10')">+</button>
+
+                </article>
+
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Entrant 2</h3>
+                    <p class="dish-price">12</p>
+                    <p class="dish-desc">Descripcio</p>
+                    <img src="img/hamburguesa.jpg" alt="Entrant 2" width=100px class="dish-img">
+                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Entrant2', '12')">+</button>
+
+                </article>
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Entrant 3</h3>
+                    <p class="dish-price">13</p>
+                    <p class="dish-desc">Descripcio</p>
+                    <img src="img/hamburguesa.jpg" alt="Entrant 3" width=100px class="dish-img">
+                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Entrant3', '13')">+</button>
+
+                </article>
+            </div>
+        </div>
+
+        <a name="primers"></a>
+        <div class=" w3-margin n_plat zoom">
+            <div class="hover" onclick="toggle('carta-primers')">
+                <h2 class="w3-lobster card-title w3-display-container">
+                    Primers plats
+                    <img class="w3-display-right w3-padding"
+                        src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-arrow-arrows-those-icons-lineal-color-those-icons-1.png" />
+
+                </h2>
+            </div>
+
+            <div id="carta-primers" style="display: none;"">
+                    <article class=" w3-container menu-item changebg">
+                <h3 class="dish-name">Primer 1</h3>
+                <p class="dish-price">10</p>
+                <p class="dish-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia assumenda non
+                    dignissimos tempore alias illo odio architecto cumque nisi quaerat.</p>
+                <img src="img/hamburguesa.jpg" alt="Primer 1" width=100px class="dish-img">
+                <button class=" w3-xlarge w3-circle dish-button" onclick="add_product('Primer1', '10')">+</button>
+
+                </article>
+
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Primer 2</h3>
+                    <p class="dish-price">12</p>
+                    <p class="dish-desc">Descripcio</p>
+                    <img src="img/hamburguesa.jpg" alt="Primer 2" width=100px class="dish-img">
+                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Primer2', '12')">+</button>
+
+                </article>
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Primer 3</h3>
+                    <p class="dish-price">13</p>
+                    <p class="dish-desc">Descripcio</p>
+                    <img src="img/hamburguesa.jpg" alt="Primer 3" width=100px class="dish-img">
+                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Primer3', '13')">+</button>
+
+                </article>
+            </div>
+        </div>
+
+        <a name="segons"></a>
+        <div class=" w3-margin n_plat zoom">
+            <div class="hover" onclick="toggle('carta-segons')">
+                <h2 class="w3-lobster card-title w3-display-container">
+                    Segons plats
+                    <img class="w3-display-right w3-padding"
+                        src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-arrow-arrows-those-icons-lineal-color-those-icons-1.png" />
+
+                </h2>
+            </div>
+
+            <div id="carta-segons" style="display: none;"">
+                    <article class=" w3-container menu-item changebg">
+                <h3 class="dish-name">Segon 1</h3>
+                <p class="dish-price">10</p>
+                <p class="dish-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia assumenda non
+                    dignissimos tempore alias illo odio architecto cumque nisi quaerat.</p>
+                <img src="img/hamburguesa.jpg" alt="Segon 1" width=100px class="dish-img">
+                <button class=" w3-xlarge w3-circle dish-button" onclick="add_product('Segon1', '10')">+</button>
+
+                </article>
+
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Segon 2</h3>
+                    <p class="dish-price">12</p>
+                    <p class="dish-desc">Descripcio</p>
+                    <img src="img/hamburguesa.jpg" alt="Segon 2" width=100px class="dish-img">
+                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Segon2', '12')">+</button>
+
+                </article>
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Segon 3</h3>
+                    <p class="dish-price">13</p>
+                    <p class="dish-desc">Descripcio</p>
+                    <img src="img/hamburguesa.jpg" alt="Segon 3" width=100px class="dish-img">
+                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Segon3', '13')">+</button>
+
+                </article>
+            </div>
+        </div>
+
+        <a name="postres"></a>
+        <div class=" w3-margin n_plat zoom">
+            <div class="hover" onclick="toggle('carta-postres')">
+                <h2 class="w3-lobster card-title w3-display-container">
+                    Postres
+                    <img class="w3-display-right w3-padding"
+                        src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-arrow-arrows-those-icons-lineal-color-those-icons-1.png" />
+
+                </h2>
+            </div>
+
+            <div id="carta-postres" style="display: none;"">
+                    <article class=" w3-container menu-item changebg">
+                <h3 class="dish-name">Postres 1</h3>
+                <p class="dish-price">10</p>
+                <p class="dish-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia assumenda non
+                    dignissimos tempore alias illo odio architecto cumque nisi quaerat.</p>
+                <img src="img/hamburguesa.jpg" alt="Postres 1" width=100px class="dish-img">
+                <button class=" w3-xlarge w3-circle dish-button" onclick="add_product('Postres1', '10')">+</button>
+
+                </article>
+
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Postres 2</h3>
+                    <p class="dish-price">12</p>
+                    <p class="dish-desc">Descripcio</p>
+                    <img src="img/hamburguesa.jpg" alt="Postres 2" width=100px class="dish-img">
+                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Postres2', '12')">+</button>
+
+                </article>
+                <article class="w3-container menu-item changebg">
+                    <h3 class="dish-name">Postres 3</h3>
+                    <p class="dish-price">13</p>
+                    <p class="dish-desc">Descripcio</p>
+                    <img src="img/hamburguesa.jpg" alt="Postres 3" width=100px class="dish-img">
+                    <button class="w3-xlarge w3-circle dish-button" onclick="add_product('Postres3', '13')">+</button>
+
+                </article>
+            </div>
+        </div>
+
+        <section class="w3-container basket w3-margin">
+            <header class="w3-display-container w3-padding-16">
+                <h3 class="w3-lobster w3-display-left" style="color: #a64924;font-size: 2rem;">La teva comanda</h3>
+                <h3 id="total-price" class="w3-display-right money">0</h3>
+            </header>
+            <div class="w3-container w3-center" style="padding-left: 0px;padding-right: 0px;">
+                <p><button class="w3-button w3-round-xxlarge pay_button">Pagar</button></p>
+            </div>
+            <div id="basket-products" class="w3-container basket-content">
+            </div>
+        </section>
+
+    </div>
+
+    <div class="break"></div>
+
+    <footer class="w3-container">
+        <p>Autors: Jaume, Jordi, Marti</p>
+        <p><a href="cantic@example.com">contacte@cantic.com</a></p>
+    </footer>
+</body>
+<script src="cordova.js"></script>
+
+</html>
